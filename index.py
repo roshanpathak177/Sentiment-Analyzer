@@ -19,10 +19,10 @@ def index():
             obj = TextBlob(text)
             sentiment = obj.sentiment.polarity
             if sentiment > 0:
-                color = 'green'
+                body_class = 'positive-body'
             else:
-                color = 'red'
-            return render_template('index.html', color=color)
+                body_class = 'negative-body'
+            return render_template('index.html', body_class=body_class)
         except Exception as e:
             return render_template('index.html', error=str(e))
     return render_template('index.html')
