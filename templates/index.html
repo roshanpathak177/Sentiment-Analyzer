@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sentiment Analyzer</title>
+  <style>
+    /* body {
+      background-color: {% if color %}{{ color }}{% else %}white{% endif %};
+    } */
+  </style>
+</head>
+<body>
+  <h1>Sentiment Analyzer</h1>
+  {% if error %}
+    <p>{{ error }}</p>
+  {% endif %}
+  <form method="post">
+    <label for="url">Enter the URL of the article:</label>
+    <input type="text" id="url" name="url" required>
+    <input type="submit" value="Analyze">
+  </form>
+</body>
+</html>
