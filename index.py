@@ -18,11 +18,12 @@ def index():
             text = article.summary
             obj = TextBlob(text)
             sentiment = obj.sentiment.polarity
+            print(f"Sentiment Polarity: {sentiment}")
             if sentiment > 0:
                 body_class = 'positive-body'
             else:
                 body_class = 'negative-body'
-            return render_template('index.html', body_class=body_class)
+            return render_template('index.html', body_class=body_class, polarity=sentiment)
         except Exception as e:
             return render_template('index.html', error=str(e))
     return render_template('index.html')
