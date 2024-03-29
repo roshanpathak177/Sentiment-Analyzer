@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 flask = "*"
+nltk = "*"
 
 [requires]
 python_version = "3.9"
