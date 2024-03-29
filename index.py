@@ -1,7 +1,12 @@
 import os
+import tempfile
 import nltk
 
-nltk.download('punkt')
+# Create a temporary directory for NLTK data
+temp_dir = tempfile.TemporaryDirectory()
+
+# Download the required NLTK data to the temporary directory
+nltk.download('punkt', download_dir=temp_dir.name)
 
 from flask import Flask, render_template, request
 from textblob import TextBlob
