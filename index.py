@@ -1,7 +1,7 @@
 import os
 import nltk
 
-os.environ['nltk_data'] = os.path.join(os.path.dirname(__file__), 'nltk_DATA')
+nltk.download('punkt')
 
 from flask import Flask, render_template, request
 from textblob import TextBlob
@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    print(nltk.data.find('tokenizers/punkt'))
+
     if request.method == 'POST':
         url = request.form['url']
         article = Article(url)
