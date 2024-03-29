@@ -8,6 +8,9 @@ temp_dir = tempfile.TemporaryDirectory()
 # Download the required NLTK data to the temporary directory
 nltk.download('punkt', download_dir=temp_dir.name)
 
+# Set the NLTK data directory to the temporary directory
+nltk.data.path = [temp_dir.name]
+
 from flask import Flask, render_template, request
 from textblob import TextBlob
 from newspaper import Article
