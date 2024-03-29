@@ -1,0 +1,67 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .polarity-range {
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+  }
+  
+  .polarity-range.extremely-positive {
+    background-color: #006400; /* Dark Green */
+  }
+  
+  .polarity-range.very-positive {
+    background-color: #228B22; /* Forest Green */
+  }
+  
+  .polarity-range.positive {
+    background-color: #32CD32; /* Lime Green */
+  }
+  
+  .polarity-range.moderately-positive {
+    background-color: #50C878; /* Emerald Green */
+  }
+  
+  .polarity-range.slightly-positive {
+    background-color: #98FB98; /* Mint Green */
+  }
+  
+  .polarity-range.neutral {
+    background-color: #fff; /* White */
+    color: #000;
+  }
+  
+  .polarity-range.slightly-negative {
+    background-color: #FFB6C1; /* Light Pink (light shade of red) */
+  }
+  
+  .polarity-range.moderately-negative {
+    background-color: #DC143C; /* Cherry Red */
+  }
+  
+  .polarity-range.negative {
+    background-color: #DC143C; /* Crimson */
+  }
+  
+  .polarity-range.very-negative {
+    background-color: #8B0000; /* Burgundy */
+  }
+  
+  .polarity-range.extremely-negative {
+    background-color: #800000; /* Maroon */
+  }
