@@ -19,7 +19,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-
+    polarity = 0  # Initialize polarity to 0
     if request.method == 'POST':
         url = request.form['url']
         article = Article(url)
@@ -29,13 +29,13 @@ def index():
             article.nlp()
             text = article.summary
             obj = TextBlob(text)
-            sentiment = obj.sentiment.polarity
-            print(f"Sentiment Polarity: {sentiment}")
-            if sentiment > 0:
+            polarity = obj.sentiment.polarity
+            print(f"Sentiment Polarity: {polarity}")
+            if polarity > 0:
                 body_class = 'positive-body'
             else:
                 body_class = 'negative-body'
-            return render_template('index.html', body_class=body_class, polarity=sentiment)
+            return render_template('index.html', body_class=body_class, polarity=polarity)
         except Exception as e:
-            return render_template('index.html', error=str(e))
-    return render_template('index.html')
+            return render_template('index.html', error=str(e), polarity=polarity)
+    return render_template('index.html', polarity=polarity)
