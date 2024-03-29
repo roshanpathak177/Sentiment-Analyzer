@@ -4,21 +4,31 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f0f0f0;
   }
   
   .container {
     text-align: center;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+    padding: 40px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
   }
   
   .polarity-range {
     font-weight: bold;
-    padding: 5px 10px;
+    padding: 10px 20px;
     border-radius: 5px;
     color: #fff;
+    margin-bottom: 20px;
   }
   
   .polarity-range.extremely-positive {
@@ -30,11 +40,11 @@ body {
   }
   
   .polarity-range.positive {
-    background-color: #32CD32; /* Lime Green */
+    background-color: #50C878; /* Emerald Green */
   }
   
   .polarity-range.moderately-positive {
-    background-color: #50C878; /* Emerald Green */
+    background-color: #32CD32; /* Lime Green */
   }
   
   .polarity-range.slightly-positive {
@@ -64,4 +74,36 @@ body {
   
   .polarity-range.extremely-negative {
     background-color: #800000; /* Maroon */
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 10px;
+  }
+  
+  .submit-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
   }

@@ -3,6 +3,9 @@
   <head>
     <title>Sentiment Analyzer</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="container">
@@ -10,25 +13,25 @@
       {% if error %}
       <p>{{ error }}</p>
       {% else %}
-      {% if polarity >= 0.8 %}
+      {% if polarity >= 0.4 %}
       <p class="polarity-range extremely-positive">Sentiment Polarity: {{ polarity }}</p>
-      {% elif polarity >= 0.6 %}
+      {% elif polarity >= 0.3 %}
       <p class="polarity-range very-positive">Sentiment Polarity: {{ polarity }}</p>
-      {% elif polarity >= 0.4 %}
-      <p class="polarity-range positive">Sentiment Polarity: {{ polarity }}</p>
       {% elif polarity >= 0.2 %}
+      <p class="polarity-range positive">Sentiment Polarity: {{ polarity }}</p>
+      {% elif polarity >= 0.1 %}
       <p class="polarity-range moderately-positive">Sentiment Polarity: {{ polarity }}</p>
       {% elif polarity >= 0 %}
       <p class="polarity-range slightly-positive">Sentiment Polarity: {{ polarity }}</p>
       {% elif polarity == 0 %}
       <p class="polarity-range neutral">Sentiment Polarity: {{ polarity }}</p>
-      {% elif polarity >= -0.2 %}
+      {% elif polarity >= -0.1 %}
       <p class="polarity-range slightly-negative">Sentiment Polarity: {{ polarity }}</p>
-      {% elif polarity >= -0.4 %}
+      {% elif polarity >= -0.2 %}
       <p class="polarity-range moderately-negative">Sentiment Polarity: {{ polarity }}</p>
-      {% elif polarity >= -0.6 %}
+      {% elif polarity >= -0.3 %}
       <p class="polarity-range negative">Sentiment Polarity: {{ polarity }}</p>
-      {% elif polarity >= -0.8 %}
+      {% elif polarity >= -0.4 %}
       <p class="polarity-range very-negative">Sentiment Polarity: {{ polarity }}</p>
       {% else %}
       <p class="polarity-range extremely-negative">Sentiment Polarity: {{ polarity }}</p>
@@ -37,7 +40,7 @@
       <form method="post">
         <label for="url">Enter the URL of the article:</label>
         <input type="text" id="url" name="url" required>
-        <input type="submit" value="Analyze">
+        <input type="submit" value="Analyze" class="submit-button">
       </form>
     </div>
   </body>
